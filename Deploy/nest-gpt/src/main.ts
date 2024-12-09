@@ -12,7 +12,11 @@ async function bootstrap() {
     }),
   ); */
 
-  app.enableCors({});
+  app.enableCors({
+    origin: 'https://gpt-react-gpt.vercel.app',
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    credentials: true,
+  });
 
   await app.listen(3000);
 }
